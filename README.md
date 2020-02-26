@@ -1,4 +1,4 @@
-# python-object-store-library
+# Python object store library for different platforms
 
 This is a python library for different object storages that have common methods.
 
@@ -29,17 +29,39 @@ The library allows and adheres basic functionalities of object store platforms t
 
 ## Prerequisites
 
-To properly build and use library, you have to install Python2 (with pip) and/or Python3 (with pip3). 
+To properly build and use the library, you have to install python2 (with pip) or python3 (with pip3) and set up 
+a virtual environment. You might need to run the following commands for python installation:
+
+```bash
+sudo apt update
+sudo apt install -y python3-venv python3-wheel python-wheel-common
+```
 
 ## Installation
 
-To install and to be able to use this library do the following:
+The easiest way to install `object_store` library is to install it into virtual environment:
 
-1. clone this repository
-2. for python2 run `python setup.py bdist_wheel` to build a python wheel file and install it using `pip install dist/object_store-0.0.1-py2-none-any.whl`
-3. for python3 run `python3 setup.py bdist_wheel` to build a python wheel file and install it using `pip3 install dist/object_store-0.0.1-py3-none-any.whl`
+```bash
+# clone this repository
+git clone git@github.com:xlab-si/python-object-store-library.git
 
-After this you can import the library in your python files usinf `import object_store`.
+# setup virtual environment
+python3 -m venv .venv && . .venv/bin/activate
+pip install object_store
+
+# python2
+python setup.py bdist_wheel
+pip install dist/object_store-0.0.1-py2-none-any.whl
+
+# python3
+python3 setup.py bdist_wheel
+pip3 install dist/object_store-0.0.1-py3-none-any.whl
+
+# this will be relevant when the package gets published to PyPi
+pip install object_store
+```
+
+After this you can import the library in your python files using `import object_store`.
 
 ## Cleanup
 
